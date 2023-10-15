@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - masahiro-negishi
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - masahiro-negishi/TIoT-machine-learning
+  - masahiro-negishi/CS50_Web_Programming
+  - masahiro-negishi/causal_inference_in_statistics
+  - masahiro-negishi/disentanglement_zoo
