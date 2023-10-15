@@ -2,8 +2,8 @@
 layout: post
 title: Overview of Generative Models
 date: 2023-10-16
-description: an example of a blog post with some math
-tags: formatting math
+description: motivation and a basic framework of generative models
+tags: generative-model
 categories: ML
 related_posts: false
 ---
