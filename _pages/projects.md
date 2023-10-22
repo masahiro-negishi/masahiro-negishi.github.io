@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: This page is still in the template form and is currently under construction.
+description: This page is currently under construction.
 nav: true
 nav_order: 2
 display_categories: [work, fun]
