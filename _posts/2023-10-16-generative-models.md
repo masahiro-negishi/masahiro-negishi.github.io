@@ -30,15 +30,15 @@ As written in Section 1, the goal is to learn $$ p_{\theta}(x) $$ that approxima
 - Issue 1: $$ p_{data}(x) $$ is unknown
 - Issue 2: It is unclear how to measure the "distance" between $$ p_{data}(x) $$ and $$ p_{\theta}(x) $$.
 
-The first issue can be solved by approximating $$ p_{data}(x) $$ with an empirical distribution $$ \hat{p}_{data}^{N}(x) \coloneqq \frac{1}{N}\sum_{i=1}^{N}\delta(x-x_i) $$. The second issue can be solved by introducing KL divergence $$ D_{KL}[p(x) \Vert q(x)] \coloneqq \mathbb{E}_{p(x)}[\log\frac{p(x)}{q(x)}] $$. As a result, the learning objective is to derive the following $$ \hat{\theta} $$:
+The first issue can be solved by approximating $$ p_{data}(x) $$ with an empirical distribution $$ \hat{p}_{data}^{N}(x) \coloneq \frac{1}{N}\sum_{i=1}^{N}\delta(x-x_i) $$. The second issue can be solved by introducing KL divergence $$ D_{KL}[p(x) \Vert q(x)] \coloneq \mathbb{E}_{p(x)}[\log\frac{p(x)}{q(x)}] $$. As a result, the learning objective is to derive the following $$ \hat{\theta} $$:
 
 $$
 \begin{aligned}
-\hat{\theta} &\coloneqq \argmin_{\theta} D_{KL}[\hat{p}_{data}^{N}(x) \Vert p_{\theta}(x)] \\
-&= \argmin_{\theta} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log \hat{p}_{data}^{N}(x)] - \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
-&= \argmax_{\theta} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
-&= \argmax_{\theta} \frac{1}{N} \sum_{i=1}^{N}\log p_{\theta}(x_i) \\
-\bigl( &= \argmax_{\theta} \prod_{i=1}^{N}p_{\theta}(x_i) \bigr) \\
+\hat{\theta} &\coloneq \text{argmin}_{\theta} D_{KL}[\hat{p}_{data}^{N}(x) \Vert p_{\theta}(x)] \\
+&= \text{argmin}_{\theta} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log \hat{p}_{data}^{N}(x)] - \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
+&= \text{argmax}_{\theta} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
+&= \text{argmax}_{\theta} \frac{1}{N} \sum_{i=1}^{N}\log p_{\theta}(x_i) \\
+\bigl( &= \text{argmax}_{\theta} \prod_{i=1}^{N}p_{\theta}(x_i) \bigr) \\
 \end{aligned}
 $$
 

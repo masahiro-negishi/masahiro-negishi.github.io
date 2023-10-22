@@ -57,9 +57,9 @@ M step maximizes $\mathcal{L} (q, \theta; x)$ in terms of $\theta$. Note that $q
 
 $$
 \begin{aligned}
-\theta _ {t+1} &\coloneqq \argmax _ \theta \mathcal{L} (p _ {\theta _ t} (z \vert x), \theta; x) \\
-&= \argmax _ \theta \int p _ {\theta _ t} (z \vert x) \log \frac{p _ {\theta} (x, z)}{p _ {\theta _ t} (z \vert x)}dz \\
-&= \argmax _ \theta \int p _ {\theta _ t} (z \vert x) \log p _ {\theta} (x, z)dz \\
+\theta _ {t+1} &\coloneq \text{argmax} _ \theta \mathcal{L} (p _ {\theta _ t} (z \vert x), \theta; x) \\
+&= \text{argmax} _ \theta \int p _ {\theta _ t} (z \vert x) \log \frac{p _ {\theta} (x, z)}{p _ {\theta _ t} (z \vert x)}dz \\
+&= \text{argmax} _ \theta \int p _ {\theta _ t} (z \vert x) \log p _ {\theta} (x, z)dz \\
 \end{aligned}
 $$
 
