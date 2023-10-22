@@ -34,11 +34,11 @@ The first issue can be solved by approximating $$ p_{data}(x) $$ with an empiric
 
 $$
 \begin{aligned}
-\hat{\theta} &\coloneq \text{argmin}_{\theta} D_{KL}[\hat{p}_{data}^{N}(x) \Vert p_{\theta}(x)] \\
-&= \text{argmin}_{\theta} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log \hat{p}_{data}^{N}(x)] - \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
-&= \text{argmax}_{\theta} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
-&= \text{argmax}_{\theta} \frac{1}{N} \sum_{i=1}^{N}\log p_{\theta}(x_i) \\
-\bigl( &= \text{argmax}_{\theta} \prod_{i=1}^{N}p_{\theta}(x_i) \bigr) \\
+\hat{\theta} &\coloneq \underset{\theta}{\text{argmin}} D_{KL}[\hat{p}_{data}^{N}(x) \Vert p_{\theta}(x)] \\
+&= \underset{\theta}{\text{argmin}} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log \hat{p}_{data}^{N}(x)] - \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
+&= \underset{\theta}{\text{argmax}} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
+&= \underset{\theta}{\text{argmax}} \frac{1}{N} \sum_{i=1}^{N}\log p_{\theta}(x_i) \\
+\bigl( &= \underset{\theta}{\text{argmax}} \prod_{i=1}^{N}p_{\theta}(x_i) \bigr) \\
 \end{aligned}
 $$
 
