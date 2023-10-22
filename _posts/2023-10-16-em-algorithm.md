@@ -15,7 +15,7 @@ related_posts: false
 - [Reference](#4-reference)
 
 ## 1. Problem setting
-Assume there are latent variables $$ z $$, which cannot be observed. The goal is to maximize likelihood $$ \log p _ {\theta} (x) $$, where $x$ is observed variables. More specifically, given the training set $X$, the objective is to maximize likelihood $$ \log p _ {\theta} (X) $$. We assume two things to make the problem solvable with EM algorithm:
+Assume there are latent variables $$ z $$, which cannot be observed. The goal is to maximize likelihood $$ \log p _ {\theta} (x) $$, where $$ x $$ is observed variables. More specifically, given the training set $X$, the objective is to maximize likelihood $$ \log p _ {\theta} (X) $$. We assume two things to make the problem solvable with EM algorithm:
 - $$ p _ {\theta} (x, z) $$ is tractable (For M step)
 - $$ p _ {\theta} (z \vert x) $$ is tractable (For E step)
 
@@ -57,7 +57,7 @@ M step maximizes $$ \mathcal{L} (q, \theta; x) $$ in terms of $$ \theta $$. Note
 
 $$
 \begin{aligned}
-\theta _ {t+1} &\coloneq \underset{\theta}{\text{argmax}} \mathcal{L} (p _ {\theta _ t} (z \vert x), \theta; x) \\
+\theta _ {t+1} &\mathrel{\vcenter{:}}= \underset{\theta}{\text{argmax}} \mathcal{L} (p _ {\theta _ t} (z \vert x), \theta; x) \\
 &= \underset{\theta}{\text{argmax}} \int p _ {\theta _ t} (z \vert x) \log \frac{p _ {\theta} (x, z)}{p _ {\theta _ t} (z \vert x)}dz \\
 &= \underset{\theta}{\text{argmax}} \int p _ {\theta _ t} (z \vert x) \log p _ {\theta} (x, z)dz \\
 \end{aligned}

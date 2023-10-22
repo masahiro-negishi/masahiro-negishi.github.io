@@ -30,11 +30,11 @@ As written in Section 1, the goal is to learn $$ p_{\theta}(x) $$ that approxima
 - Issue 1: $$ p_{data}(x) $$ is unknown
 - Issue 2: It is unclear how to measure the "distance" between $$ p_{data}(x) $$ and $$ p_{\theta}(x) $$.
 
-The first issue can be solved by approximating $$ p_{data}(x) $$ with an empirical distribution $$ \hat{p}_{data}^{N}(x) \coloneq \frac{1}{N}\sum_{i=1}^{N}\delta(x-x_i) $$. The second issue can be solved by introducing KL divergence $$ D_{KL}[p(x) \Vert q(x)] \coloneq \mathbb{E}_{p(x)}[\log\frac{p(x)}{q(x)}] $$. As a result, the learning objective is to derive the following $$ \hat{\theta} $$:
+The first issue can be solved by approximating $$ p_{data}(x) $$ with an empirical distribution $$ \hat{p}_{data}^{N}(x) \mathrel{\vcenter{:}}= \frac{1}{N}\sum_{i=1}^{N}\delta(x-x_i) $$. The second issue can be solved by introducing KL divergence $$ D_{KL}[p(x) \Vert q(x)] \mathrel{\vcenter{:}}= \mathbb{E}_{p(x)}[\log\frac{p(x)}{q(x)}] $$. As a result, the learning objective is to derive the following $$ \hat{\theta} $$:
 
 $$
 \begin{aligned}
-\hat{\theta} &\coloneq \underset{\theta}{\text{argmin}} D_{KL}[\hat{p}_{data}^{N}(x) \Vert p_{\theta}(x)] \\
+\hat{\theta} &\mathrel{\vcenter{:}}= \underset{\theta}{\text{argmin}} D_{KL}[\hat{p}_{data}^{N}(x) \Vert p_{\theta}(x)] \\
 &= \underset{\theta}{\text{argmin}} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log \hat{p}_{data}^{N}(x)] - \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
 &= \underset{\theta}{\text{argmax}} \mathbb{E}_{\hat{p}_{data}^{N}(x)}[\log p_{\theta}(x)] \\
 &= \underset{\theta}{\text{argmax}} \frac{1}{N} \sum_{i=1}^{N}\log p_{\theta}(x_i) \\
