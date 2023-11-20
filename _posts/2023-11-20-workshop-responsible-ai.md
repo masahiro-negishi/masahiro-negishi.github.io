@@ -10,9 +10,11 @@ toc:
   sidebar: left
 ---
 
-This post is under construction.
+Note: This post is under construction.
 
-## 1. AI risks on international peace and security
+This post is about what I learned in an educational workshop on Responsible AI for Peace and Security, held in Malmö, Sweden on 16 and 17 November, 2023.
+
+## 1. AI risks on peace and security
 ## 2. How to mitigate the AI risks
 ## 3. Responsible innovation of AI
 ## 4. Possible scenarios
