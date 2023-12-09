@@ -83,9 +83,20 @@ Each type has its advantages and disadvantages.
 
 Due to its legal enforceability, a hard law is difficult to reach a consensus on and establish. In addition, the considerable effort required to amend it makes it inflexible. Once enacted, however, it carries considerable authority, enabling enforcement and compliance. A soft law, on the other hand, is easy to enact or amend, but carries the risk of non-compliance by the parties involved. Self-regulation can be seen as a form of soft law that involves one or a few parties and thus shares similarities with soft law.
 
+
+In the realm of technology governance, two contrasting approaches emerge: enabling and limiting.
+| Direction | Definition                                  | Example                           |
+| --------- | ------------------------------------------- | --------------------------------- |
+| Enabling  |  facilitating the advancement of technology | IEEE/ISO standardizations         |
+| Limiting  | regulating rapidly advancing technology     | GDPR, export control, disarmament |
+
+Both approaches are necessary for sound governance.
+
 ### 3.2. Current state of AI governance
+
 ### 3.3. Challenges
 
 ## 4. Responsible innovation of AI
 ## 5. Possible scenarios
-## 6. Takeaways
+## 6. Thoughts
+製薬の話、日本の立場、
