@@ -85,6 +85,7 @@ Due to its legal enforceability, a hard law is difficult to reach a consensus on
 
 
 In the realm of technology governance, two contrasting approaches emerge: enabling and limiting.
+
 | Direction | Definition                                  | Example                           |
 | --------- | ------------------------------------------- | --------------------------------- |
 | Enabling  |  facilitating the advancement of technology | IEEE/ISO standardizations         |
