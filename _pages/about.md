@@ -17,9 +17,13 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 A second-year master's student at [SYI Lab](http://www.ms.k.u-tokyo.ac.jp/index.html) of the University of Tokyo. Current research interests include:
-- explainable AI
 - disentangled representation learning
 - graph representation learning
-- AI for Climate Change, including creating environmentally friendly materials for batteries or buildings, and detecting illegal deforestation utilizing remote sensing, among other things
+- AI for materials
 
-I love reading SF. I highly recommend "[The Three-Body Problem](https://www.amazon.co.jp/Three-Body-Problem-Cixin-Liu/dp/178497157X)" by Cixin Liu (and his other works are also unquestionably masterpieces). When reading SF, the best drink is tea, especially I love fruit tea. Lately, I have been really into working out and jogging.
+I love to read books. Some of my favorites are:
+- "[The Three-Body Problem](https://www.amazon.co.jp/Three-Body-Problem-Cixin-Liu/dp/178497157X)" by Cixin Liu (and his other works are also unquestionably masterpieces), 
+- "[Space Brothers](https://en.wikipedia.org/wiki/Space_Brothers_(manga))" by Chuya Koyama,
+- "[How to Do Nothing](https://www.penguinrandomhouse.com/books/600671/how-to-do-nothing-by-jenny-odell/)" by Jenny Odell.
+
+Lately, I have been really into working out and jogging.
