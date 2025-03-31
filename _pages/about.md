@@ -8,7 +8,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Contact: masahir0.negi4[at]gmail.com</p>
+    <p>Contact: m.negishi25[at]imperial.ac.uk</p>
 
 news: true  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
