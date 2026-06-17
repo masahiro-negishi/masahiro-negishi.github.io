@@ -1,0 +1,24 @@
+{
+  "name": "masahiro-negishi-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/mdx": "^6.0.3",
+    "astro": "^6.4.7",
+    "pdfjs-dist": "^6.0.227",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1",
+    "vite": "^8.0.16",
+    "yaml": "^2.9.0"
+  }
+}

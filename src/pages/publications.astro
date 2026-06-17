@@ -1,0 +1,61 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { publications } from "@/data/publications";
+import { site } from "@/data/site";
+
+const grouped = publications.reduce<Record<number, typeof publications>>((acc, publication) => {
+  acc[publication.year] ??= [];
+  acc[publication.year].push(publication);
+  return acc;
+}, {});
+
+const years = Object.keys(grouped)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<BaseLayout
+  title="Publications"
+  description="Publications by Masahiro Negishi in machine learning and materials design."
+>
+  <section class="page-heading">
+    <p class="eyebrow">Research output</p>
+    <h1>Publications</h1>
+  </section>
+
+  {
+    years.map((year) => (
+      <section class="section">
+        <header>
+          <h2>{year}</h2>
+        </header>
+        <div class="publication-list">
+          {grouped[year].map((publication) => (
+            <article class="publication">
+              <div class="pub-meta">
+                {publication.abbr && <span class="tag">{publication.abbr}</span>}
+                <span>{publication.type}</span>
+              </div>
+              <h3>{publication.title}</h3>
+              <p class="pub-authors">
+                {publication.authors.map((author, index) => (
+                  <>
+                    {index > 0 && ", "}
+                    {author === site.name ? <span class="author-highlight">{author}</span> : author}
+                  </>
+                ))}
+              </p>
+              <p class="pub-authors">{publication.venue}</p>
+              <div class="pub-links">
+                {publication.url && <a href={publication.url}>Paper</a>}
+                {publication.type !== "journal" && publication.doi && (
+                  <a href={`https://doi.org/${publication.doi}`}>DOI</a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>

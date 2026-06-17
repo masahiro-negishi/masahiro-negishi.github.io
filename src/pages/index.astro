@@ -1,0 +1,398 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { publications } from "@/data/publications";
+import { site } from "@/data/site";
+
+const selectedPublications = publications.filter((publication) => publication.featured);
+
+const isPdfAsset = (path: string) => path.toLowerCase().endsWith(".pdf");
+
+const journeyEntries = [
+  {
+    period: "2025.10 - present",
+    title: "Ph.D. Student",
+    organization: "Imperial College London",
+    location: "London, United Kingdom",
+    summary: "Researching evaluation metrics and new algorithms for generative modeling of inorganic crystals.",
+    image: "/assets/img/entries/journey/imperial.jpeg",
+    imageAlt: "Imperial College London",
+    groups: [
+      {
+        label: "Paper",
+        items: [
+          "Continuous SUN (Stable, Unique, and Novel) Metric for Generative Modeling of Inorganic Crystals (IOP-MLST)",
+        ],
+      },
+    ],
+    advisor: "Aron Walsh",
+  },
+  {
+    period: "2024.02-2024.07",
+    title: "Visiting Researcher",
+    organization: "Vienna University of Technology",
+    location: "Vienna, Austria",
+    summary: "Developed an algorithm for interpreting the behavior of graph neural networks.",
+    image: "/assets/img/entries/journey/tuwien.png",
+    groups: [
+      {
+        label: "Paper",
+        items: [
+          "WILTing Trees: Interpreting the Distance Between MPNN Embeddings (ICML 2025)",
+        ],
+      },
+    ],
+    advisor: "Thomas Gartner",
+  },
+  {
+    period: "2023.11 - 2024.08",
+    title: "Research Intern",
+    organization: "OMRON SINIC X Corporation",
+    location: "Tokyo, Japan",
+    summary: "Developed a state-of-the-art coefficient-estimation algorithm for symbolic regression for scientific discovery.",
+    image: "/assets/img/entries/journey/sinicx.png",
+    groups: [
+      {
+        label: "Paper",
+        items: [
+          "Two-Stage Coefficient Estimation in Symbolic Regression for Scientific Discovery (ML&PS workshop - NeurIPS 2024)",
+        ],
+      },
+    ],
+    advisor: "Yoshitaka Ushiku and Ryo Igarashi",
+  },
+  {
+    period: "2023.04 - 2025.03",
+    title: "M.Sc. in Computer Science",
+    organization: "The University of Tokyo",
+    location: "Tokyo, Japan",
+    summary: "Studied advanced machine learning while conducting research on weakly supervised disentanglement.",
+    image: "/assets/img/entries/journey/utokyo.png",
+    groups: [
+      {
+        label: "Thesis",
+        items: ["Weakly Supervised Disentanglement from Distance-based Supervision"],
+      },
+    ],
+    advisor: "Masashi Sugiyama",
+  },
+  {
+    period: "2022.10 - 2023.08",
+    title: "Research Intern",
+    organization: "Matsuo Institute, Inc",
+    location: "Tokyo, Japan",
+    summary: "Scaled up generative models for autonomous driving and robotics.",
+    image: "/assets/img/entries/journey/matsuo.jpg",
+    groups: [
+      {
+        label: "Papers",
+        items: [
+          "Scaling Laws of Dataset Size for VideoGPT (JSAI 2023)",
+          "Construction and Validation of Action-Conditioned VideoGPT (JSAI 2023)",
+          "Scaling Laws of Model Size for World Models (JSAI 2023)",
+        ],
+      },
+    ],
+    advisor: "Yutaka Matsuo",
+  },
+  {
+    period: "2019.04 - 2023.03",
+    title: "B.Sc. in Information Science",
+    organization: "The University of Tokyo",
+    location: "Tokyo, Japan",
+    summary: "Studied the foundations of computer science while conducting research on weakly supervised classification.",
+    image: "/assets/img/entries/journey/utokyo.png",
+    groups: [
+      {
+        label: "Thesis",
+        items: [
+          "Pairwise-constraint classification in weakly supervised machine learning: risk-consistent and classifier-consistent approaches",
+        ],
+      },
+    ],
+    advisor: "Masashi Sugiyama",
+  },
+];
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Machine learning for materials design</p>
+      <h1>{site.name}</h1>
+      <p class="lead">
+        I am a first-year Ph.D. student in the <a href="https://wmd-group.github.io/">Materials Design Group</a> at Imperial College London, supervised by Professor <a href="https://profiles.imperial.ac.uk/a.walsh">Aron Walsh</a>.
+        My research interests lie in developing and applying modern machine learning techniques, such as generative models and reinforcement learning, to the inverse design of materials at the atomic level and to uncovering the scientific principles underlying their behavior.
+      </p>
+      <div class="actions">
+        <a class="button" href={site.github} target="_blank" rel="noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18.92-.26 1.91-.38 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.08 0 4.42-2.69 5.39-5.25 5.68.42.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+            />
+          </svg>
+          GitHub
+        </a>
+        <a class="button" href={site.googleScholar} target="_blank" rel="noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3 1.5 8.5 12 14l10.5-5.5L12 3Z" />
+            <path d="M5.5 11.35v4.05c0 2.1 2.9 3.8 6.5 3.8s6.5-1.7 6.5-3.8v-4.05L12 14.75l-6.5-3.4Z" />
+          </svg>
+          Google Scholar
+        </a>
+        <a class="button" href={site.linkedin} target="_blank" rel="noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M5.35 3.45A2.35 2.35 0 1 1 .65 3.45a2.35 2.35 0 0 1 4.7 0ZM.95 8h4.1v14H.95V8Zm7.35 0h3.92v1.91h.06C12.83 8.83 14.18 7.72 16.1 7.72c4.16 0 4.93 2.74 4.93 6.3V22h-4.1v-7.08c0-1.69-.03-3.86-2.35-3.86-2.36 0-2.72 1.84-2.72 3.73V22H7.76V8h.54Z"
+            />
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <figure class="profile">
+      <img src="/assets/img/profile.png" alt="Masahiro Negishi" width="960" height="960" />
+    </figure>
+  </section>
+
+  <section class="contact-section" aria-label="Contact">
+    <p>Email</p>
+    <a href={`mailto:${site.email.replace("[at]", "@")}`}>{site.email}</a>
+  </section>
+
+  <section class="section">
+    <header>
+      <h2>Journey</h2>
+    </header>
+    <div class="journey-timeline">
+      {
+        journeyEntries.map((entry) => (
+          <article class="journey-card">
+            <div class="journey-logo" aria-hidden="true">
+              {entry.image && <img src={entry.image} alt="" loading="lazy" />}
+              <span>{entry.imageAlt}</span>
+            </div>
+            <div class="journey-body">
+              <p class="journey-period">{entry.period}</p>
+              <h3 class="journey-title">
+                {entry.title}, <span>{entry.organization}</span>
+              </h3>
+              <p class="journey-location">{entry.location}</p>
+              <p class="journey-summary">{entry.summary}</p>
+              {entry.groups.map((group) => (
+                <div class="journey-group">
+                  <h4>{group.label}</h4>
+                  <ul>
+                    {group.items.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <p class="journey-advisor">Advisor: {entry.advisor}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section scrollable-section">
+    <header>
+      <h2>Selected Work</h2>
+    </header>
+    <div class="publication-list publication-strip" aria-label="Scrollable selected work">
+      {
+        selectedPublications.map((publication) => (
+          <article class="publication">
+            <div class="pub-meta">
+              {publication.abbr && <span class="tag">{publication.abbr}</span>}
+              <span>{publication.year}</span>
+            </div>
+            <h3>{publication.title}</h3>
+            <p class="pub-authors">
+              {publication.authors.map((author, index) => (
+                <>
+                  {index > 0 && ", "}
+                  {author === site.name ? <span class="author-highlight">{author}</span> : author}
+                </>
+              ))}
+            </p>
+            <p class="pub-authors">{publication.venue}</p>
+            {publication.url && (
+              <div class="pub-links">
+                <a href={publication.url}>Link</a>
+              </div>
+            )}
+            {publication.image && (
+              <figure class="publication-media">
+                {isPdfAsset(publication.image) ? (
+                  <>
+                    <canvas
+                      class="publication-preview-canvas"
+                      data-pdf-src={publication.image}
+                      role="img"
+                      aria-label={publication.imageAlt ?? publication.title}
+                    ></canvas>
+                    <a href={publication.image}>View preview</a>
+                  </>
+                ) : (
+                  <img
+                    class="publication-preview-image"
+                    src={publication.image}
+                    alt={publication.imageAlt ?? publication.title}
+                    loading="lazy"
+                  />
+                )}
+              </figure>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <script>
+    import * as pdfjs from "pdfjs-dist";
+    import pdfWorker from "pdfjs-dist/build/pdf.worker.mjs?url";
+
+    pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
+
+    const selectedWorkList = document.querySelector<HTMLElement>(".publication-strip");
+    const pdfRenderTasks = new WeakMap<HTMLCanvasElement, { cancel: () => void }>();
+    let resizeFrame = 0;
+
+    const renderPdfPreview = async (canvas: HTMLCanvasElement) => {
+      const source = canvas.dataset.pdfSrc;
+      const frame = canvas.closest<HTMLElement>(".publication-media");
+
+      if (!source || !frame) {
+        return;
+      }
+
+      pdfRenderTasks.get(canvas)?.cancel();
+      canvas.removeAttribute("width");
+      canvas.removeAttribute("height");
+      canvas.style.removeProperty("width");
+      canvas.style.removeProperty("height");
+
+      const pdf = await pdfjs.getDocument({ url: source }).promise;
+      const page = await pdf.getPage(1);
+      const baseViewport = page.getViewport({ scale: 1 });
+      const frameWidth = frame.clientWidth || baseViewport.width;
+      const cssScale = frameWidth / baseViewport.width;
+      const deviceScale = window.devicePixelRatio || 1;
+      const viewport = page.getViewport({ scale: cssScale * deviceScale });
+      const context = canvas.getContext("2d");
+
+      if (!context) {
+        return;
+      }
+
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      canvas.style.width = `${frameWidth}px`;
+      canvas.style.height = `${baseViewport.height * cssScale}px`;
+
+      const renderTask = page.render({ canvas, canvasContext: context, viewport });
+      pdfRenderTasks.set(canvas, renderTask);
+      try {
+        await renderTask.promise;
+      } finally {
+        if (pdfRenderTasks.get(canvas) === renderTask) {
+          pdfRenderTasks.delete(canvas);
+        }
+      }
+
+      frame.dataset.mediaReady = "true";
+      pdfRenderTasks.delete(canvas);
+    };
+
+    const renderPdfPreviews = async () => {
+      if (!selectedWorkList) {
+        return;
+      }
+
+      const canvases = Array.from(
+        selectedWorkList.querySelectorAll<HTMLCanvasElement>(".publication-preview-canvas"),
+      );
+
+      await Promise.all(
+        canvases.map((canvas) =>
+          renderPdfPreview(canvas).catch((error) => {
+            if (error?.name === "RenderingCancelledException") {
+              return;
+            }
+
+            canvas.closest<HTMLElement>(".publication-media")?.classList.add("is-preview-error");
+          }),
+        ),
+      );
+    };
+
+    renderPdfPreviews();
+    window.addEventListener("resize", () => {
+      window.cancelAnimationFrame(resizeFrame);
+      resizeFrame = window.requestAnimationFrame(renderPdfPreviews);
+    });
+  </script>
+
+  <section class="section">
+    <header>
+      <h2>Awards & Scholarships</h2>
+    </header>
+    <div class="entry-list">
+      <article class="entry-card">
+        <div class="entry-meta">
+          <span>2025-2029</span>
+          <span>Imperial College London</span>
+        </div>
+        <h3>President's PhD Scholarship</h3>
+        <p>Full funding of tuition fees, stipend, and research consumables support.</p>
+      </article>
+      <article class="entry-card">
+        <div class="entry-meta">
+          <span>2025-2028</span>
+          <span>The Funai Foundation for Information Technology</span>
+        </div>
+        <h3>Funai Overseas Scholarship</h3>
+        <p>Support for postgraduate study abroad, including living allowance and medical coverage.</p>
+      </article>
+      <article class="entry-card">
+        <div class="entry-meta">
+          <span>2024</span>
+          <span>Japan Student Services Organization</span>
+        </div>
+        <h3>Scholarship for exchange programs</h3>
+        <p>Stipend and airfare support for research exchange study.</p>
+      </article>
+      <article class="entry-card">
+        <div class="entry-meta">
+          <span>2023</span>
+          <span>The University of Tokyo</span>
+        </div>
+        <h3>School of Science Encouragement Award</h3>
+        <p>
+          Ranked first in the Department of Information Science based on thesis and coursework evaluation.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <header>
+      <h2>Activities</h2>
+    </header>
+    <div class="entry-list">
+      <article class="entry-card">
+        <div class="entry-meta">
+          <span>2025-present</span>
+          <span>XPLANE</span>
+        </div>
+        <h3>Fundraising & Alumni Relations Team</h3>
+        <p>
+          Supporting Japanese students who want to study abroad through Japan's largest study-abroad community.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

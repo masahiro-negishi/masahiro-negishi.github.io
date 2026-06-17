@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { contentSlug } from "@/lib/slugs";
+
+const decks = (await getCollection("slides", ({ data }) => !data.draft))
+  .filter((deck) => contentSlug(deck) !== "research-overview")
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Slides" description="Presentation slides by Masahiro Negishi.">
+  <section class="page-heading">
+    <p class="eyebrow">Presentations</p>
+    <h1>Slides</h1>
+  </section>
+
+  <section class="page-shell">
+    {
+      decks.length === 0 ? (
+        <div class="empty-state">No public slide decks yet.</div>
+      ) : (
+        <div class="entry-list">
+          {decks.map((deck) => (
+            <article class="entry-card">
+              <div class="entry-meta">
+                {deck.data.event && <span>{deck.data.event}</span>}
+                <time datetime={deck.data.date.toISOString()}>
+                  {deck.data.date.toLocaleDateString("en", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+              <h2><a href={`/slides/${contentSlug(deck)}/`}>{deck.data.title}</a></h2>
+              <p>{deck.data.description}</p>
+            </article>
+          ))}
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

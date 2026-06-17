@@ -1,0 +1,57 @@
+---
+import { site } from "@/data/site";
+import "@/styles/global.css";
+
+type NavItem = {
+  label: string;
+  href: string;
+};
+
+const {
+  title = site.title,
+  description = site.description,
+} = Astro.props as {
+  title?: string;
+  description?: string;
+};
+
+const navItems: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Publications", href: "/publications/" },
+  { label: "Blog", href: "/blog/" },
+  { label: "Slides", href: "/slides/" },
+];
+
+const pageTitle = title === site.title ? site.title : `${title} | ${site.title}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-mark" href="/" aria-label={`${site.name} home`}>
+        <span>{site.name}</span>
+        <small>{site.nameJa}</small>
+      </a>
+      <nav aria-label="Primary navigation">
+        {
+          navItems.map((item) => (
+            <a href={item.href} class={Astro.url.pathname === item.href ? "active" : ""}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
