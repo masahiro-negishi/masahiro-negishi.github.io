@@ -3,9 +3,27 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { contentSlug } from "@/lib/slugs";
 
-const decks = (await getCollection("slides", ({ data }) => !data.draft))
+const mdxDecks = (await getCollection("slides", ({ data }) => !data.draft))
   .filter((deck) => contentSlug(deck) !== "research-overview")
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .map((deck) => ({
+    title: deck.data.title,
+    event: deck.data.event,
+    description: deck.data.description,
+    date: deck.data.date,
+    href: `/slides/${contentSlug(deck)}/`,
+  }));
+
+const standaloneDecks = [
+  {
+    title: "How Good Are Crystal Generative Models?",
+    event: "Future of Materials Design",
+    description: "Continuous Metrics and Substitution-Based Novelty Analysis",
+    date: new Date("2026-07-01"),
+    href: "/slides/how-good-are-crystal-generative-models/",
+  },
+];
+
+const decks = [...mdxDecks, ...standaloneDecks].sort((a, b) => b.date.valueOf() - a.date.valueOf());
 ---
 
 <BaseLayout title="Slides" description="Presentation slides by Masahiro Negishi.">
@@ -23,17 +41,17 @@ const decks = (await getCollection("slides", ({ data }) => !data.draft))
           {decks.map((deck) => (
             <article class="entry-card">
               <div class="entry-meta">
-                {deck.data.event && <span>{deck.data.event}</span>}
-                <time datetime={deck.data.date.toISOString()}>
-                  {deck.data.date.toLocaleDateString("en", {
+                {deck.event && <span>{deck.event}</span>}
+                <time datetime={deck.date.toISOString()}>
+                  {deck.date.toLocaleDateString("en", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
                   })}
                 </time>
               </div>
-              <h2><a href={`/slides/${contentSlug(deck)}/`}>{deck.data.title}</a></h2>
-              <p>{deck.data.description}</p>
+              <h2><a href={deck.href}>{deck.title}</a></h2>
+              <p>{deck.description}</p>
             </article>
           ))}
         </div>
