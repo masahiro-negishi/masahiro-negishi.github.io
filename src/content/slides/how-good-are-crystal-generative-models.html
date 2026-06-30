@@ -304,11 +304,13 @@ html,body{height:100%;margin:0;background:var(--page-bg,#D9DCE0);}
 #uns .clip-reference{clip-path:inset(58% 0 25% 78%);}
 </style>
 <style>
-#sun .slide-body{flex-direction:column;align-items:center;justify-content:center;gap:2cqw;padding:1.8cqw 1.4cqw 3.2cqw;}
+#sun .slide-body{flex-direction:column;align-items:center;justify-content:center;gap:1.6cqw;padding:1.8cqw 1.4cqw 3.2cqw;}
 #sun .sun-figure{width:96cqw;max-width:96cqw;margin:0;flex:0 0 auto;}
-#sun .sun-figure svg{display:block;width:100%;height:auto;max-height:56cqh;aspect-ratio:8/2.55;object-fit:contain;}
+#sun .sun-figure svg{display:block;width:100%;height:auto;max-height:60cqh;aspect-ratio:8/3.3;object-fit:contain;}
 #sun .sun-figure svg .fragment[data-anim="fade"]{transform:none;}
 #sun .sun-points{margin:0;font-size:1.18rem;line-height:1.28;}
+#sun .sun-points.fragment{opacity:1;transform:none;transition:opacity .28s ease,visibility .28s ease;}
+#sun .sun-points.fragment.is-visible{opacity:0;visibility:hidden;}
 </style>
 <style>
 #cun .slide-body{flex-wrap:wrap;align-content:flex-start;gap:2.4cqw 5cqw;padding-top:2.7cqw;}
@@ -402,7 +404,7 @@ html,body{height:100%;margin:0;background:var(--page-bg,#D9DCE0);}
   #subcat .slide-body{display:grid;grid-template-columns:46% 54%;grid-template-rows:repeat(3,1fr);
     column-gap:3cqw;align-items:center;}
   #subcat .schematic{grid-column:1;grid-row:1 / 4;width:100%;height:100%;}
-  #subcat .clabel{font:600 1.5cqw "IBM Plex Sans",Inter,Arial,sans-serif;}
+  #subcat .clabel{font-weight:400;font-size:24px;font-family:"IBM Plex Sans",Inter,Arial,sans-serif;}
   #subcat .blktext{font-weight:700;}
 
   #subcat .desc{grid-column:2;font-size:1.9cqw;line-height:1.4;padding:.6cqw 1.4cqw;
@@ -3791,8 +3793,8 @@ html,body{height:100%;margin:0;background:var(--page-bg,#D9DCE0);}
            role="img"
            aria-label="Binary thresholding of uniqueness, novelty, and stability into a SUN score."
            width="8mm"
-           height="2.55mm"
-           viewBox="0 0 8 2.55"
+           height="3.3mm"
+           viewBox="0 0 8 3.3"
            version="1.1"
            id="svg1"
            xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -4418,24 +4420,60 @@ html,body{height:100%;margin:0;background:var(--page-bg,#D9DCE0);}
                    class="katex-math">x</tspan><tspan
                    class="katex-main">) = 0 or 1</tspan></text>
               <g
-                 id="sun-continuous-overlay"
+                 id="sun-continuous-row"
                  class="fragment"
                  data-step="1"
                  data-anim="fade">
-                <rect style="fill:#ffffff;fill-opacity:1;stroke:none" x="0.36" y="2.09" width="1.28" height="0.30" rx="0.06" ry="0.06" />
-                <rect style="fill:#ffffff;fill-opacity:1;stroke:none" x="2.36" y="2.09" width="1.28" height="0.30" rx="0.06" ry="0.06" />
-                <rect style="fill:#ffffff;fill-opacity:1;stroke:none" x="4.36" y="2.09" width="1.28" height="0.30" rx="0.06" ry="0.06" />
-                <rect style="fill:#ffffff;fill-opacity:1;stroke:none" x="6.16" y="2.09" width="1.68" height="0.30" rx="0.06" ry="0.06" />
-                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="1" y="2.24" id="sun-cu-label"><tspan class="katex-main" x="1" y="2.24">cU(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
-                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="3" y="2.24" id="sun-cn-label"><tspan class="katex-main" x="3" y="2.24">cN(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
-                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="5" y="2.24" id="sun-cs-label"><tspan class="katex-main" x="5" y="2.24">cS(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
-                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="7" y="2.24" id="sun-csun-label"><tspan class="katex-main" x="7" y="2.24">cSUN(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
+                <path
+                   style="fill:none;stroke:#000000;stroke-width:0.025;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;marker-end:url(#ArrowWide)"
+                   d="M 4,2.47 V 2.73"
+                   id="sun-down-arrow" />
+                <rect
+                   style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.018;stroke-dasharray:none"
+                   id="sun-cu-box"
+                   width="1.32"
+                   height="0.34"
+                   x="0.34"
+                   y="2.84"
+                   rx="0.08"
+                   ry="0.08" />
+                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="1" y="3.01" id="sun-cu-label"><tspan class="katex-main" x="1" y="3.01">cU(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
+                <rect
+                   style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.018;stroke-dasharray:none"
+                   id="sun-cn-box"
+                   width="1.32"
+                   height="0.34"
+                   x="2.34"
+                   y="2.84"
+                   rx="0.08"
+                   ry="0.08" />
+                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="3" y="3.01" id="sun-cn-label"><tspan class="katex-main" x="3" y="3.01">cN(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
+                <rect
+                   style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.018;stroke-dasharray:none"
+                   id="sun-cs-box"
+                   width="1.32"
+                   height="0.34"
+                   x="4.34"
+                   y="2.84"
+                   rx="0.08"
+                   ry="0.08" />
+                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="5" y="3.01" id="sun-cs-label"><tspan class="katex-main" x="5" y="3.01">cS(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
+                <rect
+                   style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.018;stroke-dasharray:none"
+                   id="sun-csun-box"
+                   width="1.72"
+                   height="0.34"
+                   x="6.14"
+                   y="2.84"
+                   rx="0.08"
+                   ry="0.08" />
+                <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.17px;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;dominant-baseline:middle;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke-width:0.265" x="7" y="3.01" id="sun-csun-label"><tspan class="katex-main" x="7" y="3.01">cSUN(</tspan><tspan class="katex-math">x</tspan><tspan class="katex-main">) &#x2208; [0, 1]</tspan></text>
               </g>
             </g>
           </g>
         </svg>
       </figure>
-      <ul class="sun-points">
+      <ul class="sun-points fragment" data-step="1" data-anim="fade">
         <li>Highly dependent on heuristic thresholds</li>
         <li>Fails to distinguish marginal passes from strong passes</li>
       </ul>
@@ -5120,7 +5158,7 @@ html,body{height:100%;margin:0;background:var(--page-bg,#D9DCE0);}
             <circle cx="1101" cy="352" r="11" fill="#646C75"/>
           </g>
         </g>
-        <text class="clabel" x="110" y="360" fill="#646C75" text-anchor="middle">GenAI crystal</text>
+        <text class="clabel" x="110" y="360" fill="#646C75" text-anchor="middle" font-size="24" font-weight="400">GenAI crystal</text>
 
         <!-- Step 1 — Duplicate (top, green) -->
         <g class="fragment" data-step="1" data-anim="appear">
