@@ -3,7 +3,7 @@ export type Publication = {
   authors: string[];
   venue: string;
   year: number;
-  type: "conference" | "journal" | "thesis";
+  type: "conference" | "journal" | "preprint" | "thesis";
   abbr?: string;
   doi?: string;
   url?: string;
@@ -13,6 +13,58 @@ export type Publication = {
 };
 
 export const publications: Publication[] = [
+  {
+    title:
+      "SMACT v4: Enhanced Screening and Prediction Tools for Computational Materials Design",
+    authors: [
+      "Kinga O. Mastej",
+      "Anthony Onwuli",
+      "Alexander Moriarty",
+      "Daniel W. Davies",
+      "Ryan Nduma",
+      "Keith T. Butler",
+      "Jiwoo Lee",
+      "Masahiro Negishi",
+      "Panyalak Detrattanawichai",
+      "Alex M. Ganose",
+      "Hyunsoo Park",
+      "Rhys E. a. Goodall",
+      "Tianshu Li",
+      "Aron Walsh",
+    ],
+    venue: "Journal of Open Source Software",
+    year: 2026,
+    type: "journal",
+    abbr: "JOSS",
+    url: "https://joss.theoj.org/papers/10.21105/joss.11015",
+  },
+  {
+    title:
+      "Chemical filters for ultra-high-throughput materials screening and generation",
+    authors: [
+      "Kinga O. Mastej",
+      "Panyalak Detrattanawichai",
+      "Hyunsoo Park",
+      "Anthony Onwuli",
+      "Masahiro Negishi",
+      "Aron Walsh",
+    ],
+    venue: "arXiv:2607.17910",
+    year: 2026,
+    type: "preprint",
+    abbr: "arXiv",
+    url: "https://arxiv.org/abs/2607.17910",
+  },
+  {
+    title:
+      "Substitution-Based Analysis of Structural Novelty for Generative Models of Materials",
+    authors: ["Masahiro Negishi", "Aron Walsh"],
+    venue: "arXiv:2606.23166",
+    year: 2026,
+    type: "preprint",
+    abbr: "arXiv",
+    url: "https://arxiv.org/abs/2606.23166",
+  },
   {
     title:
       "Continuous SUN (Stable, Unique, and Novel) Metric for Generative Modeling of Inorganic Crystals",
